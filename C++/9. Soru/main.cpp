@@ -1,4 +1,3 @@
-#include <cstdlib>
 #include <iostream>
 #include <ctime>
 
@@ -7,7 +6,7 @@ int main(int argc, char** argv) {
 /*Rastgele uzunlukta(10 harften kucuk) 20 kelime olusturur*/
     srand(time(NULL));
     int uzunluk = rand() % 10;
-    char dizi[20][uzunluk];
+    string dizi[20];
     
     int i,j;
     for(i=0; i<20; i++) {
@@ -18,5 +17,5 @@ int main(int argc, char** argv) {
         cout<<" "<<endl;
     }
     
-    return (EXIT_SUCCESS);
+    return 0;
 } 
