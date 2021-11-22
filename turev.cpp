@@ -2,7 +2,7 @@
 #include <cstdlib>
 
 using namespace std;
-// Girilen fonksiyonun turevini alan program
+
 class Turev {
     public:
     char *x, *islemTuru;
@@ -10,7 +10,7 @@ class Turev {
     char ptr;
     int *siraTutucu;
     int degiskenSayi,siraTutucuBoyut = 0;
-    float sabitSayi,sonuc = 0;
+    float sonuc = 0;
     char islemler[5] = "+-*/";
     void bellekAyir() {
         x = (char *) malloc(sizeof(char) * degiskenSayi);
@@ -18,6 +18,13 @@ class Turev {
         z = (float *) malloc(sizeof(float) * degiskenSayi); 
         islemTuru = (char *) malloc(sizeof(char)* degiskenSayi + 1);
         islemTuru[degiskenSayi] = ' ';
+    }
+    void bellekBosalt() {
+        free(x);
+        free(y);
+        free(z);
+        free(islemTuru);
+        free(siraTutucu);
     }
     void turevAl(int ptr) {
         if(ptr != -1) {
@@ -65,7 +72,7 @@ int main() {
     for(int i = 0; i<turev1.degiskenSayi; i++) {
         cin>>turev1.x[i];
     }
-    cout<<"Hangi degiskene gore turev alinacak : ";
+    cout<<"Hangi degiskene gore turev alinacak"<<endl;
     cin>>turev1.ptr;
     turev1.hesapla(turev1.ptr);
     cout<<"\n===============Turev alinmamis hali==============="<<endl;
@@ -76,10 +83,6 @@ int main() {
         turev1.turevAl(i);
     }
     turev1.fonksiyonYaz();
-    free(turev1.x);
-    free(turev1.y);
-    free(turev1.z);
-    free(turev1.islemTuru);
-    free(turev1.siraTutucu);
+    turev1.bellekBosalt();
     return 0;
 }
