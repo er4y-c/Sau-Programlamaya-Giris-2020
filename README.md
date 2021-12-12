@@ -1,2 +1,2 @@
 # Sau-Programlamaya-Giris-Odevi
-Programlamaya giriş ödevi kaynak kodlarının C ve C++ versiyonları
+Sakarya Universitesi Programlamaya Giris dersi 2020-2021 donem odevlerinin cozumleri
